@@ -7,6 +7,9 @@
  * @package Spar
  */
 
+ // Register Custom Navigation Walker
+require_once get_template_directory() . '/includes/class-wp-bootstrap-navwalker.php';
+
 if ( ! function_exists( 'spar_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -120,8 +123,11 @@ add_action( 'widgets_init', 'spar_widgets_init' );
  * Enqueue scripts and styles.
  */
 function spar_scripts() {
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/node_modules/bootstrap/dist/css/bootstrap.min.css' );
 	wp_enqueue_style( 'spar-style', get_stylesheet_uri() );
 
+	wp_enqueue_script( 'bootstrap-bundle', get_template_directory_uri() . '/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js', array('jquery'), '20151215', true );
+	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/node_modules/bootstrap/dist/js/bootstrap.min.js', array('jquery'), '20151215', true );
 	wp_enqueue_script( 'spar-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'spar-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );

@@ -1,0 +1,12 @@
+{
+  "name": "spar",
+  "version": "1.0.0",
+  "description": "WP Theme based on underscore",
+  "main": "index.js",
+  "repository": "https://github.com/elysium001/spar.git",
+  "author": "Andres O. Serrano <a.omarserrano@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^4.3.1"
+  }
+}
